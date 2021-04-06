@@ -39,3 +39,15 @@ type Point = {
   
   printCoord({ x: 100, y: 100 });
 
+//Interface
+interface PointB {
+    x: number;
+    y: number;
+  }
+  
+  function printCoordB(pt: PointB) {
+    console.log("The coordinate's x value is " + pt.x);
+    console.log("The coordinate's y value is " + pt.y);
+  }
+  
+  printCoordB({ x: 100, y: 100 });
