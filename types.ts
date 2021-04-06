@@ -51,3 +51,10 @@ interface PointB {
   }
   
   printCoordB({ x: 100, y: 100 });
+
+  interface T{
+    
+  }
+  //Type assertion
+  const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
+  const a = ("expr" as any) as T;
