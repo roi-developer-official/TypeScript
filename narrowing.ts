@@ -199,7 +199,6 @@ function getArea(shape: Shape) {
 }
 
 //also 
-
 function getArea(shape: Shape) {
   switch (shape.kind) {
     case "circle":
