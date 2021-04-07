@@ -155,3 +155,59 @@ const underWater3: Fish[] = zoo.filter((pet): pet is Fish => {
   if (pet.name === "sharkey") return false;
   return isFish(pet);
 });
+
+//Discrimenated unions
+interface Shape {
+  kind: "circle" | "square";
+  radius?: number;
+  sideLength?: number;
+}
+
+
+function getArea(shape: Shape) {
+  if (shape.kind === "circle") {
+    return Math.PI * shape.radius ** 2;
+  }
+}
+
+
+//one way: - in non strictNullChecks this could potentialy cause bugs.
+function getAreaB(shape: Shape) {
+  if (shape.kind === "circle") {
+    return Math.PI * shape.radius! ** 2;
+  }
+}
+
+//second way
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+interface Square {
+  kind: "square";
+  sideLength: number;
+}
+//discrimanated union
+type Shape = Circle | Square;
+
+function getArea(shape: Shape) {
+  if (shape.kind === "circle") {
+    return Math.PI * shape.radius ** 2;
+//                   ^ = (parameter) shape: Circle
+  }
+}
+
+//also 
+
+function getArea(shape: Shape) {
+  switch (shape.kind) {
+    case "circle":
+      return Math.PI * shape.radius ** 2;
+//                     ^ = (parameter) shape: Circle
+    case "square":
+      return shape.sideLength ** 2;
+//           ^ = (parameter) shape: Square
+  }
+}
+

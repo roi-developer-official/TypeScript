@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "system",
     "noImplicitAny": true,
     "removeComments": false,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "sourceMap": true
   },
-  "include": ["./"]
+  "files": ["types.ts", "narrowing.ts"],
+  
+  "include": ["/*"]
 }

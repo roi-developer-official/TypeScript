@@ -52,13 +52,10 @@ function printCoordB(pt: PointB) {
 
 printCoordB({ x: 100, y: 100 });
 
-
-
 //Type assertion
 interface T {}
 const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
 const a = ("expr" as any) as T;
-
 
 //Literal
 let x: "hello" = "hello";
@@ -83,12 +80,18 @@ function handleRequest(url: string, method: "GET") {
 
 //recieve only the value "GET"
 const req = { url: "https://example.com", method: "GET" as "GET" };
-const req2 = { url: "https://example.com", method:"GET" } as const;
-req.method = "POST"; 
+const req2 = { url: "https://example.com", method: "GET" } as const;
+req.method = "POST";
 req2.method = "PUT";
 handleRequest(req.url, req.method as "GET");
 
+
 //null | undefined
+
+function ac(x: string | undefined) {
+  x.concat(" acb");
+}
+
 function liveDangerously(x?: number | undefined) {
   // No error
   console.log(x!.toFixed());
