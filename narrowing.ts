@@ -20,3 +20,34 @@ function padLeft(padding: number | string, input: string) {
 "object"
 "function"
  */
+
+//Truthyness narrowing
+function getUsersOnlineMessage(numUsersOnline: number) {
+    if (numUsersOnline) {
+      return `There are ${numUsersOnline} online now!`;
+    }
+    return "Nobody's here. :(";
+  }
+
+/*
+0
+NaN
+"" (the empty string)
+0n (the bigint version of zero)
+null
+undefined
+*/
+
+// both of these result in 'true'
+Boolean("hello");
+!!"world";
+
+function printAll(strs: string | string[] | null) {
+    if (strs && typeof strs === "object") {
+      for (const s of strs) {
+        console.log(s);
+      }
+    } else if (typeof strs === "string") {
+      console.log(strs);
+    }
+}
