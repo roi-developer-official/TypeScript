@@ -1,8 +1,9 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "noImplicitAny": true,
-        "removeComments": false
-    },
-    "include": ["./"],
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": false,
+    "strictNullChecks": true
+  },
+  "include": ["./"]
 }

@@ -87,3 +87,10 @@ const req2 = { url: "https://example.com", method:"GET" } as const;
 req.method = "POST"; 
 req2.method = "PUT";
 handleRequest(req.url, req.method as "GET");
+
+//null | undefined
+function liveDangerously(x?: number | undefined) {
+  // No error
+  console.log(x!.toFixed());
+}
+
