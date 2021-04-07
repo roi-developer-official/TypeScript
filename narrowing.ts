@@ -109,3 +109,16 @@ function logValue(x: Date | string) {
     //            ^ = (parameter) x: string
   }
 }
+
+//Assignment
+let p = Math.random() < 0.5 ? 10 : "hello world!";
+//  ^ = let p: string | number
+p = 1;
+
+console.log(p);
+//          ^ = let p: number
+p = "goodbye!";
+
+console.log(p);
+//          ^ = let p: string
+p = true;
